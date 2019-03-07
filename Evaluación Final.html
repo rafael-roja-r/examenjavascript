@@ -1,0 +1,94 @@
+
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Evaluación Final</title>
+
+</head>
+<body>
+	<h1>Estudiantes</h1>
+
+<p id="estud"></p>
+
+<button onclick="total()">Todo</button>
+<button onclick="promedio()">Promedio</button>
+<button onclick="mayor_nota()">Mayor Nota </button>
+<button onclick="menor_nota()">Menor Nota</button>
+
+</body>
+<script type="text/javascript">
+	var jsontext = '{"estud":['+
+	'{"Codigo":"00125","Nombre":"Jose Rafael ","nota":"9"},'+
+	'{"Codigo":"00126","Nombre":"Anderson ","nota":"4"},'+
+	'{"Codigo":"00127","Nombre":"Churcher lee ","nota":"7"},'+
+	'{"Codigo":"00128","Nombre":"Erick nemecio ","nota":"8"},'+
+	'{"Codigo":"00129","Nombre":"Sandro ","nota":"8"},'+
+	'{"Codigo":"00130","Nombre":"Max keny ","nota":"3"},'+
+	'{"Codigo":"00131","Nombre":"Jessica  ","nota":"10"},'+
+	'{"Codigo":"00132","Nombre":"Andrea","nota":"8"},'+
+	'{"Codigo":"00133","Nombre":"Erik","nota":"6"},'+
+	'{"Codigo":"00134","Nombre":"Willian","nota":"10"}'+']}';
+var  jsObj= JSON.parse(jsontext);
+
+function totl(json) {
+	var out = "<br>";
+	var i; 
+ for (i =0; i < json.estud.length;i++){
+ 	out +="" +"Codigo:"+json.estud[i].Codigo+"-"+"Nombre:"+ json.estud[i].Nombre+"-"+"nota:"+json.estud[i].nota+"<br>";
+ }
+ document.getElementById('estud').innerHTML = out;
+ }
+ totl(jsObj);
+
+ function total(argument) {
+ 	var tot = " <br>";
+ 	var Tot = [
+ 	"Codigo:00125-Nombre:Jose Rafael-nota: 9 ",
+ 	"Codigo:00126-Nombre:Anderson-nota: 4 ",
+ 	"Codigo:00127-Nombre:Churcher lee-nota: 7",
+ 	"Codigo:00128-Nombre:Erick nemecio-nota: 8",
+ 	"Codigo:00129-Nombre:Sandro-nota: 8 ",
+ 	"Codigo:00130-Nombre:Max keny-nota: 3 ",
+ 	"Codigo:00131-Nombre:Jessica-nota: 10 ",
+ 	"Codigo:00132-Nombre:Andrea-nota: 8 ",
+ 	"Codigo:00133-Nombre:Erik- nota: 6 ",
+ 	"Codigo:00134-Nombre:Willian-nota: 10 "];
+ 	for (var i = 0; i< Tot.length; i++){
+		tot+=Tot[i]+"<br>";
+	}
+	document.getElementById('estud').innerHTML = tot;
+ }
+function promedio(argument) {
+	var tot = "<br>";
+ 	var Tot = ["9","4","7","8","8","3","10","8","6","10"];
+ 	for (var i = 0; i< Tot.length; i++){
+		tot+=Tot[i]+"<br>";
+	}
+	document.getElementById('estud').innerHTML = tot;
+}
+
+function mayor_nota(argument) {
+	var tot = "<br>";
+ 	var Tot = ["9","8","8","10","8","10"];
+ 	for (var i = 0; i< Tot.length; i++){
+		tot+=Tot[i]+"<br>";
+	}
+	document.getElementById('estud').innerHTML = tot;
+}
+function menor_nota(argument) {
+	var tot = "<br>";
+ 	var Tot = ["4","3","6","7"];
+ 	for (var i = 0; i< Tot.length; i++){
+		tot+=Tot[i]+"<br>";
+	}
+	document.getElementById('estud').innerHTML = tot;
+}
+
+
+
+
+
+
+
+</script>
+</html>
